@@ -1,6 +1,6 @@
 package com.jesus.services;
 
-import com.jesus.entity.Entry;
+import com.jesus.models.Entry;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;

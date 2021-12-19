@@ -1,4 +1,4 @@
-package com.jesus.entity;
+package com.jesus.models;
 
 import java.util.Date;
 

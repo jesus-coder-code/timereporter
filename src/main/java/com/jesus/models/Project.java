@@ -1,4 +1,4 @@
-package com.jesus.entity;
+package com.jesus.models;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -9,7 +9,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "proyectos")
-public class Projects {
+public class Project {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -22,10 +22,10 @@ public class Projects {
     private int IdAdmin;
     
 
-    public Projects() {
+    public Project() {
     }
 
-    public Projects(int id, String nombre, int idAdmin) {
+    public Project(int id, String nombre, int idAdmin) {
         this.id = id;
         this.nombre = nombre;
         IdAdmin = idAdmin;

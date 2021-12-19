@@ -1,6 +1,6 @@
 package com.jesus.controller;
 
-import com.jesus.entity.Entry;
+import com.jesus.models.Entry;
 import com.jesus.services.IEntry;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.PutMapping;
 
 @RestController
 @RequestMapping("/entry")
-public class Controller {
+public class EntryController {
 
     @Autowired
     private IEntry report;

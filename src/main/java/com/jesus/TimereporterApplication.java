@@ -1,7 +1,6 @@
 package com.jesus;
 
 import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.domain.EntityScan;
 import org.springframework.context.annotation.ComponentScan;
@@ -12,7 +11,6 @@ import org.springframework.boot.web.servlet.support.SpringBootServletInitializer
 //@EntityScan("com.jesus.models")
 
 @EntityScan(basePackages= {"com.jesus.entity","com.jesus.security.entity"})
-@EnableAutoConfiguration
 @ComponentScan("com.jesus.security.jwt")
 @EnableJpaRepositories("com.jesus.security.repository")
 @EnableTransactionManagement
