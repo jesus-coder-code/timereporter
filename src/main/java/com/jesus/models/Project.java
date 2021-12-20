@@ -5,6 +5,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -18,41 +20,39 @@ public class Project {
     @Column(name = "nombre")
     private String nombre;
 
-    @Column(name = "IdAdmin")
-    private int IdAdmin;
+    @ManyToOne()
+    @JoinColumn(name = "administrador_id")
+    private Admin IdAdmin;
     
 
     public Project() {
     }
 
-    public Project(int id, String nombre, int idAdmin) {
+
+    public Project(int id, String nombre) {
         this.id = id;
         this.nombre = nombre;
-        IdAdmin = idAdmin;
     }
+
 
     public int getId() {
         return id;
     }
 
+
     public void setId(int id) {
         this.id = id;
     }
+
 
     public String getNombre() {
         return nombre;
     }
 
+
     public void setNombre(String nombre) {
         this.nombre = nombre;
     }
-
-    public int getIdAdmin() {
-        return IdAdmin;
-    }
-
-    public void setIdAdmin(int idAdmin) {
-        IdAdmin = idAdmin;
-    }
+    
     
 }

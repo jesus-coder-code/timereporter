@@ -7,6 +7,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import javax.persistence.TemporalType;
 
@@ -37,20 +39,20 @@ public class Entry {
     @Column(name = "notas")
     private String notas;
 
-    @Column(name = "IdEmpleado")
-    private int IdEmpleado;
+    @ManyToOne()
+    @JoinColumn(name = "empleados_id")
+    private Employee IdEmpleado;
     
     public Entry(){
 
     }
 
-    public Entry(int id, String proyecto, Date dia, int tiempo, String notas, int idEmpleado) {
+    public Entry(int id, String proyecto, Date dia, int tiempo, String notas) {
         this.id = id;
         this.proyecto = proyecto;
         this.dia = dia;
         this.tiempo = tiempo;
         this.notas = notas;
-        IdEmpleado = idEmpleado;
     }
 
     public int getId() {
@@ -92,13 +94,6 @@ public class Entry {
     public void setNotas(String notas) {
         this.notas = notas;
     }
-
-    public int getIdEmpleado() {
-        return IdEmpleado;
-    }
-
-    public void setIdEmpleado(int idEmpleado) {
-        IdEmpleado = idEmpleado;
-    }
+    
     
 }

@@ -8,9 +8,8 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;
 //SpringBootServletInitializer
-//@EntityScan("com.jesus.models")
+@EntityScan("com.jesus.models")
 
-@EntityScan(basePackages= {"com.jesus.entity","com.jesus.security.entity"})
 @ComponentScan("com.jesus.security.jwt")
 @EnableJpaRepositories("com.jesus.security.repository")
 @EnableTransactionManagement

@@ -4,7 +4,6 @@ import com.jesus.models.Entry;
 import com.jesus.services.IEntry;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -32,11 +31,6 @@ public class EntryController {
     @PostMapping
     public Object createEntry(@RequestBody Entry e){
         return report.save(e);
-    }
-
-    @DeleteMapping(value = "/{id}")
-    public void deleteEntry(@PathVariable int id){
-        report.deleteById(id);
     }
 
     @PutMapping
