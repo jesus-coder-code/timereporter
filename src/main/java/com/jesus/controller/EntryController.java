@@ -1,7 +1,7 @@
 package com.jesus.controller;
 
-import com.jesus.models.Entry;
-import com.jesus.services.IEntry;
+import com.jesus.model.Entry;
+import com.jesus.service.IEntry;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;

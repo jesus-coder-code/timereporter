@@ -1,10 +1,10 @@
-package com.jesus.services;
-
-import com.jesus.models.Project;
+package com.jesus.service;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import org.springframework.stereotype.Repository;
+
+import com.jesus.model.Project;
 
 @EnableJpaRepositories
 @Repository
