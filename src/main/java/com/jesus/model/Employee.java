@@ -7,9 +7,10 @@ import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
-import javax.validation.constraints.NotNull;
 
 import org.springframework.data.annotation.*;
 
@@ -18,19 +19,16 @@ import org.springframework.data.annotation.*;
 public class Employee {
     @Id
     @Column(name = "id")
-    @NotNull
-    private int id;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Integer id;
 
     @Column(name = "name")
-    @NotNull
     private String name;
 
     @Column(name = "username")
-    @NotNull
     private String username;
 
     @Column(name = "password")
-    @NotNull
     private String password;
 
 
@@ -45,7 +43,7 @@ public class Employee {
 
 
 
-	public Employee(@NotNull int id, @NotNull String name, @NotNull String username, @NotNull String password,
+	public Employee(Integer id, String name, String username, String password,
 			List<Entry> entries) {
 		super();
 		this.id = id;
@@ -57,13 +55,13 @@ public class Employee {
 
 
 
-	public int getId() {
+	public Integer getId() {
 		return id;
 	}
 
 
 
-	public void setId(int id) {
+	public void setId(Integer id) {
 		this.id = id;
 	}
 

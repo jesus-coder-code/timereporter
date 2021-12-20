@@ -21,7 +21,7 @@ public class Project {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name="id")
-    private int id;
+    private Integer id;
 
     @Column(name = "name")
     private String name;
@@ -40,7 +40,7 @@ public class Project {
     	
     }
     
-	public Project(int id, String name, List<Entry> entries, Admin admin) {
+	public Project(Integer id, String name, List<Entry> entries, Admin admin) {
 		super();
 		this.id = id;
 		this.name = name;
@@ -48,11 +48,11 @@ public class Project {
 		this.admin = admin;
 	}
 
-	public int getId() {
+	public Integer getId() {
 		return id;
 	}
 
-	public void setId(int id) {
+	public void setId(Integer id) {
 		this.id = id;
 	}
 

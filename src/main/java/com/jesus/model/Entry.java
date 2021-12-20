@@ -26,7 +26,7 @@ public class Entry {
     @Id
     @Column(name = "id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private Integer id;
 
     @CreationTimestamp
     @Temporal(TemporalType.TIMESTAMP)
@@ -51,7 +51,7 @@ public class Entry {
 
     }
 
-	public Entry(int id, Date date, Double time, String note, Employee employee, Project project) {
+	public Entry(Integer id, Date date, Double time, String note, Employee employee, Project project) {
 		super();
 		this.id = id;
 		this.date = date;
@@ -61,11 +61,11 @@ public class Entry {
 		this.project = project;
 	}
 
-	public int getId() {
+	public Integer getId() {
 		return id;
 	}
 
-	public void setId(int id) {
+	public void setId(Integer id) {
 		this.id = id;
 	}
 
