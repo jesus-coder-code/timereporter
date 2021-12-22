@@ -22,7 +22,7 @@ public class EntryController {
 	private EntryService entryService; 
 	
 
-	@GetMapping("/{id}")
+	@GetMapping("/employee/{id}")
 	public List<Entry> getEntriesByEmployeeId(@PathVariable Integer id){
 		return entryService.getEntriesByEmployeeId(id);
 	}

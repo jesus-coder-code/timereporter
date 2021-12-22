@@ -1,8 +1,5 @@
 package com.jesus.model;
 
-import java.util.List;
-
-import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -11,8 +8,9 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
 import javax.persistence.Table;
+
+import com.fasterxml.jackson.annotation.JsonBackReference;
 
 @Entity
 @Table(name = "project")
@@ -26,12 +24,9 @@ public class Project {
     @Column(name = "name")
     private String name;
     
-    @OneToMany(mappedBy = "project", fetch = FetchType.LAZY,
-            cascade = CascadeType.ALL, orphanRemoval = true)
-    private List<Entry> entries;
     
-    
-    @ManyToOne(fetch = FetchType.LAZY, optional = false, cascade = CascadeType.ALL)
+    @JsonBackReference()
+    @ManyToOne(fetch = FetchType.LAZY, optional = false)
     @JoinColumn(name = "admin_id", nullable = false)
     private Admin admin;
 
@@ -40,11 +35,10 @@ public class Project {
     	
     }
     
-	public Project(Integer id, String name, List<Entry> entries, Admin admin) {
+	public Project(Integer id, String name, Admin admin) {
 		super();
 		this.id = id;
 		this.name = name;
-		this.entries = entries;
 		this.admin = admin;
 	}
 
@@ -62,14 +56,6 @@ public class Project {
 
 	public void setName(String name) {
 		this.name = name;
-	}
-
-	public List<Entry> getEntries() {
-		return entries;
-	}
-
-	public void setEntries(List<Entry> entries) {
-		this.entries = entries;
 	}
 
 	public Admin getAdmin() {

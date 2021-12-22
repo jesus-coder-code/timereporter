@@ -12,6 +12,8 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+
 
 @Entity
 @Table(name = "admin")
@@ -30,10 +32,10 @@ public class Admin {
 
     @Column(name = "password")
     private String password;
-
     
+    @JsonManagedReference
     @OneToMany(mappedBy = "admin", fetch = FetchType.LAZY,
-            cascade = CascadeType.ALL, orphanRemoval = true)
+            cascade = CascadeType.ALL)
     private List<Project> projects;
 
     

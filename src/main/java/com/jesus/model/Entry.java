@@ -2,10 +2,8 @@ package com.jesus.model;
 
 import java.util.Date;
 
-import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -15,6 +13,8 @@ import javax.persistence.Table;
 import javax.persistence.TemporalType;
 
 import org.hibernate.annotations.CreationTimestamp;
+
+import com.fasterxml.jackson.annotation.JsonBackReference;
 
 import javax.persistence.Temporal;
 
@@ -39,11 +39,14 @@ public class Entry {
     @Column(name = "notas")
     private String note;
 
-    @ManyToOne(fetch = FetchType.LAZY, optional = false, cascade = CascadeType.ALL)
+
+    @JsonBackReference
+    @ManyToOne
     @JoinColumn(name = "employee_id", nullable = false)
     private Employee employee;
     
-    @ManyToOne(fetch = FetchType.LAZY, optional = false, cascade = CascadeType.ALL)
+    
+    @ManyToOne
     @JoinColumn(name = "project_id", nullable = false)
     private Project project;
     
